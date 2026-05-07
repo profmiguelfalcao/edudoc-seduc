@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduDoc SEDUC — Agenda do Professor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1><i class="ti ti-school"></i> EduDoc SEDUC</h1>
+      <p>Professor · Informática · SEDUC-PI</p>
+    </div>
+
+    <div class="nav-section">Principal</div>
+    <a href="index.html" class="nav-item active">
+      <i class="ti ti-calendar-week"></i> Agenda do dia
+    </a>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-list-numbers"></i> Sequência didática
+    </a>
+
+    <div class="nav-section">Matérias</div>
+    <a href="#" class="nav-item" onclick="filtrarMateria('web');return false;">
+      <i class="ti ti-world"></i> Prog. para Web
+    </a>
+    <a href="#" class="nav-item" onclick="filtrarMateria('design');return false;">
+      <i class="ti ti-palette"></i> Design e Acessib.
+    </a>
+    <a href="#" class="nav-item" onclick="filtrarMateria('redes');return false;">
+      <i class="ti ti-network"></i> Redes
+    </a>
+    <a href="#" class="nav-item" onclick="filtrarMateria('ia');return false;">
+      <i class="ti ti-brain"></i> Inteligência Artificial
+    </a>
+
+    <div class="nav-section">Ferramentas</div>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-file-text"></i> Planos de aula
+    </a>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-writing"></i> Conteúdo do quadro
+    </a>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-list-check"></i> Atividades
+    </a>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-file-certificate"></i> Documentos SEDUC
+    </a>
+
+    <div class="nav-spacer"></div>
+    <div class="nav-section">Informações</div>
+    <div class="nav-item" style="cursor:default;opacity:0.5">
+      <i class="ti ti-book"></i> PPC 2024 — SEDUC-PI
+    </div>
+    <div class="nav-item" style="cursor:default;opacity:0.5">
+      <i class="ti ti-gavel"></i> IN SUPEN Nº 4/2024
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+    <div class="topbar">
+      <div>
+        <h2 id="page-title">Agenda do dia</h2>
+        <p id="page-date"></p>
+      </div>
+      <div class="topbar-right">
+        <span id="badge-aulas" class="badge badge-blue">8 turmas</span>
+        <span class="badge badge-green">SEDUC-PI</span>
+      </div>
+    </div>
+
+    <div class="page-content">
+
+      <!-- MÉTRICAS -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Total de turmas</div>
+          <div class="metric-value">8</div>
+          <div class="metric-sub">SEDUC-PI 2025</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Matérias</div>
+          <div class="metric-value">4</div>
+          <div class="metric-sub">Prog. Web · Design · Redes · IA</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Cursos atendidos</div>
+          <div class="metric-value">5</div>
+          <div class="metric-sub">Inf. Internet · Redes · Farm. · Enf. · Seg.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Carga horária</div>
+          <div class="metric-value">4.800h</div>
+          <div class="metric-sub">Total do curso PPC 2024</div>
+        </div>
+      </div>
+
+      <!-- TURMAS -->
+      <div class="section-title">Suas turmas — clique para ver o plano e conteúdo</div>
+      <div class="turmas-grid" id="turmas-grid"></div>
+
+      <!-- PAINEL DE DETALHES DA TURMA -->
+      <div class="detail-card" id="detail-panel">
+        <div class="detail-head">
+          <div>
+            <div class="detail-title" id="det-titulo">Selecione uma turma acima</div>
+            <div class="detail-sub" id="det-sub">Programação para Web · 3º Ano · Informática para Internet · SEDUC-PI · PPC 2024</div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary" id="btn-plano" onclick="pedirPlano()">
+              <i class="ti ti-file-text"></i> Gerar plano SEDUC
+            </button>
+            <button class="btn btn-green" id="btn-guia" onclick="pedirGuia()">
+              <i class="ti ti-player-play"></i> Como ministrar
+            </button>
+            <button class="btn btn-purple" id="btn-ativ" onclick="pedirAtividade()">
+              <i class="ti ti-list-check"></i> Gerar atividade
+            </button>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-item"><strong>Matéria</strong><span id="det-materia">—</span></div>
+          <div class="detail-item"><strong>Turma / Curso</strong><span id="det-turma">—</span></div>
+          <div class="detail-item"><strong>Atividade sugerida</strong><span id="det-ativ">—</span></div>
+          <div class="detail-item"><strong>Conteúdo previsto no PPC</strong><span id="det-conteudo">—</span></div>
+        </div>
+
+        <div class="quadro" id="det-quadro">
+          <p style="opacity:0.4">Selecione uma turma para ver o conteúdo do quadro.</p>
+        </div>
+
+        <div class="btn-row" style="margin-top:0.875rem">
+          <a href="sequencia.html" class="btn">
+            <i class="ti ti-list-numbers"></i> Ver sequência didática anual
+          </a>
+          <button class="btn" onclick="pedirDocSeduc()">
+            <i class="ti ti-file-certificate"></i> Gerar documento SEDUC
+          </button>
+        </div>
+      </div>
+
+      <!-- GUIA DE MINISTRAÇÃO -->
+      <div class="guia-panel" id="guia-panel" style="display:none">
+        <div class="guia-header">
+          <div class="guia-icon"><i class="ti ti-player-play"></i></div>
+          <div>
+            <div class="guia-title" id="guia-title">Como ministrar esta aula</div>
+            <div class="guia-sub" id="guia-sub">Roteiro passo a passo · SEDUC-PI</div>
+          </div>
+        </div>
+        <div id="guia-etapas"></div>
+        <div class="tempo-bar" id="guia-tempo"></div>
+      </div>
+
+      <!-- DICA INICIAL -->
+      <div id="dica-inicial" style="background:#fffbeb;border:1px solid #f59e0b;border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;display:flex;gap:12px;align-items:flex-start">
+        <i class="ti ti-bulb" style="font-size:20px;color:#d97706;margin-top:1px;flex-shrink:0"></i>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:#92400e;margin-bottom:3px">Dica rápida</div>
+          <div style="font-size:12px;color:#78350f;line-height:1.7">
+            Clique em qualquer turma para ver o conteúdo do quadro, gerar o plano de aula no formato SEDUC-PI ou receber o roteiro completo de como ministrar a aula.
+            Para ver a sequência didática anual das 40 semanas, clique em <strong>Sequência didática</strong> no menu.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="dados/turmas.js"></script>
+<script src="app.js"></script>
+<script>
+  // ── Estado da aplicação ──────────────────────────────────
+  let turmaSelecionada = null;
+  let todasTurmas = [...TURMAS];
+
+  // ── Inicialização ────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('page-date').textContent = dataHoje();
+    renderTurmas(todasTurmas);
+  });
+
+  // ── Renderiza grid de turmas ─────────────────────────────
+  function renderTurmas(lista) {
+    const grid = document.getElementById('turmas-grid');
+    grid.innerHTML = lista.map((t, i) => `
+      <div class="turma-card ${turmaSelecionada && turmaSelecionada.id === t.id ? 'sel' : ''}"
+           onclick="selecionarTurma('${t.id}')">
+        <div class="turma-header">
+          <i class="ti ${t.icone}" style="font-size:22px;color:var(--${t.cor === 'blue' ? 'azul' : t.cor === 'purple' ? 'roxo' : t.cor === 'teal' ? 'teal' : t.cor === 'amber' ? 'amber' : 'azul'})"></i>
+          <span class="badge ${badgeClass(t.cor)}">${t.badge}</span>
+        </div>
+        <div class="turma-nome">${t.materia}</div>
+        <div class="turma-curso">${t.ano} · ${t.curso}</div>
+      </div>
+    `).join('');
+  }
+
+  // ── Seleciona turma e atualiza painel ────────────────────
+  function selecionarTurma(id) {
+    turmaSelecionada = TURMAS.find(t => t.id === id);
+    if (!turmaSelecionada) return;
+
+    // Atualiza grid
+    renderTurmas(todasTurmas);
+
+    // Atualiza painel
+    document.getElementById('det-titulo').textContent = turmaSelecionada.materia;
+    document.getElementById('det-sub').textContent =
+      `${turmaSelecionada.ano} · ${turmaSelecionada.curso} · SEDUC-PI · PPC 2024`;
+    document.getElementById('det-materia').textContent = turmaSelecionada.materia;
+    document.getElementById('det-turma').textContent = `${turmaSelecionada.ano} — ${turmaSelecionada.curso}`;
+    document.getElementById('det-ativ').textContent = turmaSelecionada.atividade;
+    document.getElementById('det-conteudo').textContent =
+      'Conforme ementa do PPC 2024 — SEDUC-PI, eixo Informação e Comunicação';
+
+    // Quadro
+    renderQuadro(turmaSelecionada.quadro, 'det-quadro');
+
+    // Esconde guia anterior
+    esconderGuia('guia-panel');
+    document.getElementById('dica-inicial').style.display = 'none';
+
+    // Scroll suave
+    document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── Filtro por matéria ───────────────────────────────────
+  function filtrarMateria(tipo) {
+    const mapa = { web: 'web', design: 'design', redes: 'redes', ia: ['ia-inf','ia-farm','ia-enf','ia-seg'] };
+    const filtro = mapa[tipo];
+    if (Array.isArray(filtro)) {
+      todasTurmas = TURMAS.filter(t => filtro.includes(t.id));
+    } else {
+      todasTurmas = TURMAS.filter(t => t.id === filtro);
+    }
+    renderTurmas(todasTurmas);
+    // Atualiza nav ativo
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  }
+
+  // ── Ações dos botões ─────────────────────────────────────
+  function pedirPlano() {
+    if (!turmaSelecionada) { alert('Selecione uma turma primeiro!'); return; }
+    // Abre nova aba com prompt copiado para o Claude
+    const texto = turmaSelecionada.plano;
+    // Como estamos offline, abrimos um alert com o prompt para copiar
+    const div = document.createElement('div');
+    div.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center';
+    div.innerHTML = `
+      <div style="background:#fff;border-radius:14px;padding:1.5rem;max-width:560px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
+        <div style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:8px">
+          <i class="ti ti-copy" style="vertical-align:-2px;margin-right:6px;color:#185FA5"></i>
+          Copie e cole no Claude
+        </div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px">
+          Copie o prompt abaixo e cole diretamente no Claude.ai para gerar o plano de aula completo:
+        </div>
+        <textarea id="prompt-box" style="width:100%;height:120px;font-size:12px;font-family:monospace;border:1px solid #e2e4ea;border-radius:8px;padding:10px;resize:none;line-height:1.6" readonly>${texto}</textarea>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button onclick="copiarPrompt()" style="flex:1;padding:8px;background:#185FA5;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer">
+            <i class="ti ti-copy" style="vertical-align:-1px;margin-right:4px"></i> Copiar
+          </button>
+          <button onclick="this.closest('div[style*=fixed]').remove()" style="padding:8px 16px;background:#f5f6fa;border:1px solid #e2e4ea;border-radius:8px;font-size:13px;cursor:pointer">Fechar</button>
+        </div>
+      </div>`;
+    document.body.appendChild(div);
+  }
+
+  function copiarPrompt() {
+    const box = document.getElementById('prompt-box');
+    box.select();
+    document.execCommand('copy');
+    const btn = box.nextElementSibling.firstElementChild;
+    btn.textContent = '✓ Copiado!';
+    setTimeout(() => { btn.innerHTML = '<i class="ti ti-copy" style="vertical-align:-1px;margin-right:4px"></i> Copiar'; }, 2000);
+  }
+
+  function pedirGuia() {
+    if (!turmaSelecionada) { alert('Selecione uma turma primeiro!'); return; }
+    renderGuia(
+      null, [],
+      turmaSelecionada.materia + ' — ' + turmaSelecionada.ano,
+      'Roteiro passo a passo · 60 min · SEDUC-PI',
+      'guia-panel'
+    );
+    // Mostra botão para pedir ao Claude
+    document.getElementById('guia-etapas').innerHTML = `
+      <div style="padding:1.25rem;text-align:center">
+        <div style="font-size:13px;font-weight:500;color:#1a1a2e;margin-bottom:8px">
+          Gere o roteiro completo desta aula com IA
+        </div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:14px;line-height:1.6">
+          Clique no botão abaixo para copiar o prompt e colar no Claude.
+          Você receberá um roteiro passo a passo de como ministrar esta aula.
+        </div>
+        <button onclick="pedirGuiaPrompt()" class="btn btn-green" style="margin:auto">
+          <i class="ti ti-sparkles"></i> Copiar prompt de guia ↗
+        </button>
+      </div>`;
+  }
+
+  function pedirGuiaPrompt() {
+    if (!turmaSelecionada) return;
+    const texto = turmaSelecionada.guia;
+    const div = document.createElement('div');
+    div.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center';
+    div.innerHTML = `
+      <div style="background:#fff;border-radius:14px;padding:1.5rem;max-width:560px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
+        <div style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:8px">
+          <i class="ti ti-player-play" style="vertical-align:-2px;margin-right:6px;color:#1E8449"></i>
+          Como ministrar — ${turmaSelecionada.materia}
+        </div>
+        <textarea id="prompt-box2" style="width:100%;height:120px;font-size:12px;font-family:monospace;border:1px solid #e2e4ea;border-radius:8px;padding:10px;resize:none;line-height:1.6" readonly>${texto}</textarea>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button onclick="copiarPrompt2()" style="flex:1;padding:8px;background:#1E8449;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer">
+            <i class="ti ti-copy" style="vertical-align:-1px;margin-right:4px"></i> Copiar
+          </button>
+          <button onclick="this.closest('div[style*=fixed]').remove()" style="padding:8px 16px;background:#f5f6fa;border:1px solid #e2e4ea;border-radius:8px;font-size:13px;cursor:pointer">Fechar</button>
+        </div>
+      </div>`;
+    document.body.appendChild(div);
+  }
+
+  function copiarPrompt2() {
+    const box = document.getElementById('prompt-box2');
+    box.select();
+    document.execCommand('copy');
+    const btn = box.nextElementSibling.firstElementChild;
+    btn.textContent = '✓ Copiado!';
+    setTimeout(() => { btn.innerHTML = '<i class="ti ti-copy" style="vertical-align:-1px;margin-right:4px"></i> Copiar'; }, 2000);
+  }
+
+  function pedirAtividade() {
+    if (!turmaSelecionada) { alert('Selecione uma turma primeiro!'); return; }
+    const t = turmaSelecionada;
+    const texto = `Crie uma lista de atividades práticas e avaliativas sobre "${t.materia}" para alunos do ${t.ano} do curso de ${t.curso} (SEDUC-PI). Inclua: 3 questões de múltipla escolha, 2 questões discursivas e 1 atividade prática. Padrão IN SUPEN Nº 4/2024.`;
+    const div = document.createElement('div');
+    div.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center';
+    div.innerHTML = `
+      <div style="background:#fff;border-radius:14px;padding:1.5rem;max-width:560px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
+        <div style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:8px">
+          <i class="ti ti-list-check" style="vertical-align:-2px;margin-right:6px;color:#3C3489"></i>
+          Atividade — ${t.materia}
+        </div>
+        <textarea id="prompt-box3" style="width:100%;height:120px;font-size:12px;font-family:monospace;border:1px solid #e2e4ea;border-radius:8px;padding:10px;resize:none;line-height:1.6" readonly>${texto}</textarea>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button onclick="document.getElementById('prompt-box3').select();document.execCommand('copy');this.textContent='✓ Copiado!'" style="flex:1;padding:8px;background:#3C3489;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer">Copiar</button>
+          <button onclick="this.closest('div[style*=fixed]').remove()" style="padding:8px 16px;background:#f5f6fa;border:1px solid #e2e4ea;border-radius:8px;font-size:13px;cursor:pointer">Fechar</button>
+        </div>
+      </div>`;
+    document.body.appendChild(div);
+  }
+
+  function pedirDocSeduc() {
+    if (!turmaSelecionada) { alert('Selecione uma turma primeiro!'); return; }
+    const t = turmaSelecionada;
+    const texto = `Gere um modelo de registro de aula no formato padrão da SEDUC-PI para a disciplina de ${t.materia}, ${t.ano} do curso de ${t.curso}. Inclua: campos de identificação, ementa da aula, objetivos, metodologia, recursos, conteúdo trabalhado e espaço para assinatura conforme exigido pela SEDUC-PI.`;
+    alert('Prompt copiado para a área de transferência!\n\nCole no Claude para gerar o documento SEDUC.\n\n' + texto);
+  }
+</script>
+
+</body>
+</html>

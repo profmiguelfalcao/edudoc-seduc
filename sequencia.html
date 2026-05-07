@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduDoc SEDUC — Sequência Didática Anual</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <h1><i class="ti ti-school"></i> EduDoc SEDUC</h1>
+      <p>Professor · Informática · SEDUC-PI</p>
+    </div>
+
+    <div class="nav-section">Principal</div>
+    <a href="index.html" class="nav-item">
+      <i class="ti ti-calendar-week"></i> Agenda do dia
+    </a>
+    <a href="sequencia.html" class="nav-item active">
+      <i class="ti ti-list-numbers"></i> Sequência didática
+    </a>
+
+    <div class="nav-section">Matérias</div>
+    <a href="index.html" class="nav-item">
+      <i class="ti ti-world"></i> Prog. para Web
+    </a>
+    <a href="index.html" class="nav-item">
+      <i class="ti ti-palette"></i> Design e Acessib.
+    </a>
+    <a href="index.html" class="nav-item">
+      <i class="ti ti-network"></i> Redes
+    </a>
+    <a href="index.html" class="nav-item">
+      <i class="ti ti-brain"></i> Inteligência Artificial
+    </a>
+
+    <div class="nav-section">Ferramentas</div>
+    <a href="sequencia.html" class="nav-item active">
+      <i class="ti ti-file-text"></i> Planos de aula
+    </a>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-writing"></i> Conteúdo do quadro
+    </a>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-list-check"></i> Atividades
+    </a>
+    <a href="sequencia.html" class="nav-item">
+      <i class="ti ti-file-certificate"></i> Documentos SEDUC
+    </a>
+
+    <div class="nav-spacer"></div>
+    <div class="nav-section">Informações</div>
+    <div class="nav-item" style="cursor:default;opacity:0.5">
+      <i class="ti ti-book"></i> PPC 2024 — SEDUC-PI
+    </div>
+    <div class="nav-item" style="cursor:default;opacity:0.5">
+      <i class="ti ti-gavel"></i> IN SUPEN Nº 4/2024
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="main-content">
+    <div class="topbar">
+      <div>
+        <h2>Sequência Didática Anual</h2>
+        <p>Programação para Web · 3º Ano · Informática para Internet · SEDUC-PI · PPC 2024</p>
+      </div>
+      <div class="topbar-right">
+        <span class="badge badge-blue">40 semanas</span>
+        <span class="badge badge-green">80h</span>
+        <span class="badge" style="background:#EEEDFE;color:#3C3489">3 trimestres</span>
+      </div>
+    </div>
+
+    <div class="page-content">
+
+      <!-- MÉTRICAS -->
+      <div class="metrics-grid" style="grid-template-columns:repeat(4,1fr)">
+        <div class="metric-card">
+          <div class="metric-label">Carga horária</div>
+          <div class="metric-value">80h</div>
+          <div class="metric-sub">2 aulas/semana</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Semanas letivas</div>
+          <div class="metric-value">40</div>
+          <div class="metric-sub">3 trimestres</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Aulas teoria</div>
+          <div class="metric-value">8</div>
+          <div class="metric-sub">Semanas 1, 8, 14, 21, 23, 28, 32</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Avaliações</div>
+          <div class="metric-value">9</div>
+          <div class="metric-sub">AQL + AQT + RPT por trimestre</div>
+        </div>
+      </div>
+
+      <!-- LEGENDA -->
+      <div class="legenda">
+        <div class="leg-item"><div class="leg-dot" style="background:#185FA5"></div> Teoria/Conceito</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#1E8449"></div> Prática/Lab</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#3C3489"></div> Projeto</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#854F0B"></div> Avaliação (AQL/AQT/RPT)</div>
+      </div>
+
+      <!-- TABS DE TRIMESTRE -->
+      <div class="tri-tabs">
+        <button class="tri-tab active" onclick="showTri(1, this)">
+          <i class="ti ti-calendar" style="vertical-align:-2px;margin-right:4px"></i>
+          1º Trimestre — Sem. 1–13
+        </button>
+        <button class="tri-tab" onclick="showTri(2, this)">
+          <i class="ti ti-calendar" style="vertical-align:-2px;margin-right:4px"></i>
+          2º Trimestre — Sem. 14–27
+        </button>
+        <button class="tri-tab" onclick="showTri(3, this)">
+          <i class="ti ti-calendar" style="vertical-align:-2px;margin-right:4px"></i>
+          3º Trimestre — Sem. 28–40
+        </button>
+      </div>
+
+      <!-- TABELAS POR TRIMESTRE -->
+      <div id="tri1" class="tri-block active"></div>
+      <div id="tri2" class="tri-block"></div>
+      <div id="tri3" class="tri-block"></div>
+
+      <!-- PAINEL DE DETALHES -->
+      <div class="detail-card" id="detail-panel" style="margin-top:1.25rem">
+        <div class="detail-head">
+          <div>
+            <div class="detail-title" id="det-titulo">Semana 1 — Arquitetura web, cliente x servidor, HTTP/HTTPS</div>
+            <div class="detail-sub">Programação para Web · 3º Ano · Informática para Internet · SEDUC-PI · PPC 2024</div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="pedirPlano()">
+              <i class="ti ti-file-text"></i> Plano SEDUC
+            </button>
+            <button class="btn btn-green" onclick="mostrarGuia()">
+              <i class="ti ti-player-play"></i> Como ministrar
+            </button>
+            <button class="btn btn-purple" onclick="pedirAtividade()">
+              <i class="ti ti-list-check"></i> Atividade
+            </button>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-item"><strong>Tema</strong><span id="det-tema">Arquitetura web, protocolo HTTP/HTTPS, cliente x servidor</span></div>
+          <div class="detail-item"><strong>Tipo</strong><span id="det-tipo">Teoria/Conceito</span></div>
+          <div class="detail-item"><strong>Competência (PPC 2024)</strong><span id="det-comp">Compreender os fundamentos da arquitetura web e suas tecnologias</span></div>
+          <div class="detail-item"><strong>Habilidade (PPC 2024)</strong><span id="det-hab">Identificar como funciona HTTP e a comunicação cliente-servidor</span></div>
+          <div class="detail-item"><strong>Avaliação sugerida</strong><span id="det-aval">Participação em debate + mapa conceitual (AQL)</span></div>
+          <div class="detail-item"><strong>Recursos</strong><span id="det-rec">Projetor, lousa, exercício de fixação</span></div>
+        </div>
+
+        <div class="quadro" id="det-quadro">
+          <p>PROGRAMAÇÃO PARA WEB — SEM. 1</p>
+          <p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+          <p>ARQUITETURA WEB</p>
+          <p>  Cliente → Request → Servidor</p>
+          <p>  Servidor → Response → Cliente</p>
+          <p> </p>
+          <p>HTTP vs HTTPS</p>
+          <p>  HTTP: sem criptografia</p>
+          <p>  HTTPS: com SSL/TLS (cadeado)</p>
+        </div>
+      </div>
+
+      <!-- GUIA DE MINISTRAÇÃO -->
+      <div class="guia-panel" id="guia-panel" style="display:none">
+        <div class="guia-header">
+          <div class="guia-icon"><i class="ti ti-player-play"></i></div>
+          <div>
+            <div class="guia-title" id="guia-title">Como ministrar esta aula</div>
+            <div class="guia-sub" id="guia-sub">Roteiro passo a passo · SEDUC-PI</div>
+          </div>
+        </div>
+        <div id="guia-etapas"></div>
+        <div class="tempo-bar" id="guia-tempo"></div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="dados/aulas.js"></script>
+<script src="app.js"></script>
+<script>
+  let aulaSelecionada = AULAS[0];
+
+  // ── Renderiza tabelas por trimestre ──────────────────────
+  function renderTabelas() {
+    [1, 2, 3].forEach(tri => {
+      const aulasTri = AULAS.filter(a => a.tri === tri);
+      const container = document.getElementById('tri' + tri);
+      container.innerHTML = `
+        <div class="seq-head">
+          <span>Semana</span>
+          <span>Tema da aula</span>
+          <span>Tipo</span>
+          <span>Competência</span>
+        </div>
+        ${aulasTri.map(a => `
+          <div class="seq-row ${aulaSelecionada.sem === a.sem ? 'sel' : ''}"
+               onclick="selecionarAula(${a.sem})">
+            <div class="seq-sem">Sem. ${a.sem}</div>
+            <div class="seq-tema">${a.tema}</div>
+            <div><span class="tipo-badge tipo-${a.tipo}">${tipoLabel(a.tipo)}</span></div>
+            <div class="seq-comp">${a.comp}</div>
+          </div>`).join('')}`;
+    });
+  }
+
+  // ── Seleciona aula e atualiza painel ─────────────────────
+  function selecionarAula(sem) {
+    aulaSelecionada = AULAS.find(a => a.sem === sem);
+    if (!aulaSelecionada) return;
+
+    renderTabelas();
+
+    document.getElementById('det-titulo').textContent =
+      `Semana ${aulaSelecionada.sem} — ${aulaSelecionada.tema}`;
+    document.getElementById('det-tema').textContent = aulaSelecionada.tema;
+    document.getElementById('det-tipo').textContent = tipoLabel(aulaSelecionada.tipo);
+    document.getElementById('det-comp').textContent = aulaSelecionada.comp;
+    document.getElementById('det-hab').textContent = aulaSelecionada.hab || '—';
+    document.getElementById('det-aval').textContent = aulaSelecionada.aval || '—';
+    document.getElementById('det-rec').textContent = aulaSelecionada.rec || '—';
+
+    renderQuadro(aulaSelecionada.quadro, 'det-quadro');
+    esconderGuia('guia-panel');
+    document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── Tabs de trimestre ────────────────────────────────────
+  function showTri(n, el) {
+    document.querySelectorAll('.tri-block').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tri-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tri' + n).classList.add('active');
+    el.classList.add('active');
+    esconderGuia('guia-panel');
+  }
+
+  // ── Guia de ministração ──────────────────────────────────
+  function mostrarGuia() {
+    const a = aulaSelecionada;
+    if (a.guia && a.guia.length > 0) {
+      renderGuia(a.guia, a.tempos,
+        `Sem. ${a.sem}: ${a.tema.split('—')[0].trim()}`,
+        `Roteiro passo a passo · 60 min · ${tipoLabel(a.tipo)} · SEDUC-PI`,
+        'guia-panel'
+      );
+    } else {
+      // Sem guia embutido — mostra prompt para gerar
+      document.getElementById('guia-title').textContent =
+        'Como ministrar — Semana ' + a.sem;
+      document.getElementById('guia-sub').textContent =
+        'Roteiro passo a passo · 60 min · ' + tipoLabel(a.tipo) + ' · SEDUC-PI';
+      document.getElementById('guia-etapas').innerHTML = `
+        <div style="padding:1.25rem;text-align:center">
+          <i class="ti ti-sparkles" style="font-size:28px;color:#1E8449;opacity:0.5;display:block;margin-bottom:8px"></i>
+          <div style="font-size:13px;font-weight:500;color:#1a1a2e;margin-bottom:6px">
+            Gere o roteiro completo desta aula
+          </div>
+          <div style="font-size:12px;color:#6b7280;margin-bottom:14px;line-height:1.6;max-width:400px;margin-left:auto;margin-right:auto">
+            Copie o prompt abaixo e cole no Claude para receber um roteiro
+            detalhado passo a passo de como ministrar esta aula.
+          </div>
+          <button onclick="copiarPromptGuia()" class="btn btn-green" style="margin:0 auto">
+            <i class="ti ti-copy"></i> Copiar prompt de guia
+          </button>
+          <div id="prompt-guia-box" style="display:none;margin-top:12px">
+            <textarea id="prompt-guia-text" style="width:100%;height:100px;font-size:11px;font-family:monospace;border:1px solid #e2e4ea;border-radius:8px;padding:10px;resize:none;line-height:1.6" readonly></textarea>
+            <div style="font-size:11px;color:#6b7280;margin-top:4px">Texto copiado! Cole no Claude.ai para gerar o roteiro.</div>
+          </div>
+        </div>`;
+      document.getElementById('guia-tempo').innerHTML = '';
+      document.getElementById('guia-panel').style.display = 'block';
+      document.getElementById('guia-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function copiarPromptGuia() {
+    const a = aulaSelecionada;
+    const texto = `Gere um roteiro detalhado passo a passo de como ministrar a aula "${a.tema}" para alunos do 3º Ano de Informática para Internet (SEDUC-PI, PPC 2024). Tipo de aula: ${tipoLabel(a.tipo)}. Competência: ${a.comp}. Inclua: divisão de tempo por etapa (total 60 min), falas sugeridas para o professor em cada momento, perguntas de verificação da aprendizagem, dicas de gestão da turma no laboratório, como circular e atender dúvidas, e como registrar a participação dos alunos para compor a nota AQL conforme IN SUPEN Nº 4/2024.`;
+    const box = document.getElementById('prompt-guia-box');
+    const textEl = document.getElementById('prompt-guia-text');
+    textEl.value = texto;
+    box.style.display = 'block';
+    textEl.select();
+    document.execCommand('copy');
+  }
+
+  // ── Botão plano SEDUC ─────────────────────────────────────
+  function pedirPlano() {
+    const a = aulaSelecionada;
+    const texto = `Gere um plano de aula completo no formato SEDUC-PI para a disciplina Programação para Web, 3º Ano de Informática para Internet. Tema: ${a.tema}. Competência do PPC 2024: ${a.comp}. Habilidade: ${a.hab}. Inclua: dados de identificação (escola, turma, data, professor, disciplina), ementa, objetivos, conteúdo, metodologia, recursos, avaliação AQL e AQT conforme IN SUPEN Nº 4/2024 da SEDUC-PI.`;
+    mostrarModal('Plano de aula SEDUC-PI', texto, '#185FA5');
+  }
+
+  // ── Botão atividade ───────────────────────────────────────
+  function pedirAtividade() {
+    const a = aulaSelecionada;
+    const texto = `Crie uma atividade avaliativa para a aula "${a.tema}" para alunos do 3º Ano de Informática para Internet (SEDUC-PI). Inclua: 3 questões de múltipla escolha (50%) e 2 questões discursivas (50%), conforme formato AQT da IN SUPEN Nº 4/2024. Ao final, inclua o gabarito e rubrica de correção.`;
+    mostrarModal('Atividade — ' + a.tema.split('—')[0], texto, '#3C3489');
+  }
+
+  // ── Modal genérico para copiar prompt ────────────────────
+  function mostrarModal(titulo, texto, cor) {
+    const div = document.createElement('div');
+    div.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem';
+    div.innerHTML = `
+      <div style="background:#fff;border-radius:14px;padding:1.5rem;max-width:580px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3)">
+        <div style="font-size:15px;font-weight:600;color:#1a1a2e;margin-bottom:4px">
+          <i class="ti ti-copy" style="vertical-align:-2px;margin-right:6px;color:${cor}"></i>${titulo}
+        </div>
+        <div style="font-size:12px;color:#6b7280;margin-bottom:12px">Copie e cole no Claude.ai para gerar o documento completo:</div>
+        <textarea id="modal-txt" style="width:100%;height:130px;font-size:12px;font-family:monospace;border:1px solid #e2e4ea;border-radius:8px;padding:10px;resize:none;line-height:1.6" readonly>${texto}</textarea>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button id="modal-btn" onclick="
+            document.getElementById('modal-txt').select();
+            document.execCommand('copy');
+            this.textContent='✓ Copiado!';
+            setTimeout(()=>this.innerHTML='<i class=\\'ti ti-copy\\' style=\\'vertical-align:-1px;margin-right:4px\\'></i> Copiar',2000)
+          " style="flex:1;padding:8px;background:${cor};color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer">
+            <i class="ti ti-copy" style="vertical-align:-1px;margin-right:4px"></i> Copiar
+          </button>
+          <button onclick="this.closest('div[style*=fixed]').remove()"
+            style="padding:8px 16px;background:#f5f6fa;border:1px solid #e2e4ea;border-radius:8px;font-size:13px;cursor:pointer">Fechar</button>
+        </div>
+      </div>`;
+    document.body.appendChild(div);
+    div.addEventListener('click', e => { if (e.target === div) div.remove(); });
+  }
+
+  // ── Inicialização ─────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    renderTabelas();
+  });
+</script>
+
+</body>
+</html>
