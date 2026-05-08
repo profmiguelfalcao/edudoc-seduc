@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduDoc SEDUC — Sequência Didática Anual</title>
+  <title>EduDoc SEDUC — Sequência Didática — Inteligência Artificial</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
 </head>
@@ -23,7 +23,7 @@
       <i class="ti ti-calendar-week"></i> Agenda do dia
     </a>
     <div class="nav-section">Matérias</div>
-    <a href="sequencia.html" class="nav-item active">
+    <a href="sequencia.html" class="nav-item">
       <i class="ti ti-world"></i> Prog. para Web
     </a>
     <a href="index.html" class="nav-item">
@@ -32,21 +32,21 @@
     <a href="index.html" class="nav-item">
       <i class="ti ti-network"></i> Redes
     </a>
-    <a href="sequencia-ia.html" class="nav-item">
+    <a href="sequencia-ia.html" class="nav-item active">
       <i class="ti ti-brain"></i> Inteligência Artificial
     </a>
 
     <div class="nav-section">Ferramentas</div>
-    <a href="sequencia.html" class="nav-item active">
+    <a href="sequencia-ia.html" class="nav-item active">
       <i class="ti ti-file-text"></i> Planos de aula
     </a>
-    <a href="sequencia.html" class="nav-item">
+    <a href="sequencia-ia.html" class="nav-item">
       <i class="ti ti-writing"></i> Conteúdo do quadro
     </a>
-    <a href="sequencia.html" class="nav-item">
+    <a href="sequencia-ia.html" class="nav-item">
       <i class="ti ti-list-check"></i> Atividades
     </a>
-    <a href="sequencia.html" class="nav-item">
+    <a href="sequencia-ia.html" class="nav-item">
       <i class="ti ti-file-certificate"></i> Documentos SEDUC
     </a>
 
@@ -64,13 +64,13 @@
   <main class="main-content">
     <div class="topbar">
       <div>
-        <h2>Sequência Didática Anual</h2>
-        <p>Programação para Web · 3º Ano · Informática para Internet · SEDUC-PI · PPC 2024</p>
+        <h2>Sequência Didática — Inteligência Artificial</h2>
+        <p>Inteligência Artificial · 1º Ano · Ensino Médio · SEDUC-PI · Alinhado à BNCC</p>
       </div>
       <div class="topbar-right">
-        <span class="badge badge-blue">40 semanas</span>
-        <span class="badge badge-green">80h</span>
-        <span class="badge" style="background:#EEEDFE;color:#3C3489">3 trimestres</span>
+        <span class="badge badge-amber">40 aulas</span>
+        <span class="badge badge-green">40h</span>
+        <span class="badge" style="background:#FFF3CD;color:#856404">4 unidades</span>
       </div>
     </div>
 
@@ -80,23 +80,47 @@
       <div class="metrics-grid" style="grid-template-columns:repeat(4,1fr)">
         <div class="metric-card">
           <div class="metric-label">Carga horária</div>
-          <div class="metric-value">80h</div>
-          <div class="metric-sub">2 aulas/semana</div>
+          <div class="metric-value">40h</div>
+          <div class="metric-sub">1 aula/semana (1h cada)</div>
         </div>
         <div class="metric-card">
-          <div class="metric-label">Semanas letivas</div>
+          <div class="metric-label">Total de aulas</div>
           <div class="metric-value">40</div>
           <div class="metric-sub">3 trimestres</div>
         </div>
         <div class="metric-card">
-          <div class="metric-label">Aulas teoria</div>
-          <div class="metric-value">8</div>
-          <div class="metric-sub">Semanas 1, 8, 14, 21, 23, 28, 32</div>
+          <div class="metric-label">Unidades temáticas</div>
+          <div class="metric-value">4</div>
+          <div class="metric-sub">I — II — III — IV</div>
         </div>
         <div class="metric-card">
-          <div class="metric-label">Avaliações</div>
-          <div class="metric-value">9</div>
-          <div class="metric-sub">AQL + AQT + RPT por trimestre</div>
+          <div class="metric-label">Projetos e avaliações</div>
+          <div class="metric-value">8</div>
+          <div class="metric-sub">Quiz + Seminário + Projeto Final</div>
+        </div>
+      </div>
+
+      <!-- UNIDADES TEMÁTICAS -->
+      <div class="metrics-grid" style="grid-template-columns:repeat(4,1fr);margin-top:0.5rem">
+        <div class="metric-card" style="border-left:4px solid #185FA5">
+          <div class="metric-label" style="color:#185FA5">Unidade I · Aulas 1–10</div>
+          <div style="font-size:13px;font-weight:600;color:#1a1a2e;margin:4px 0">O que é IA?</div>
+          <div class="metric-sub">Conceito, história, algoritmos, robótica, IA generativa</div>
+        </div>
+        <div class="metric-card" style="border-left:4px solid #1E8449">
+          <div class="metric-label" style="color:#1E8449">Unidade II · Aulas 11–20</div>
+          <div style="font-size:13px;font-weight:600;color:#1a1a2e;margin:4px 0">Como as Máquinas Aprendem?</div>
+          <div class="metric-sub">Machine Learning, dados, PLN, visão computacional</div>
+        </div>
+        <div class="metric-card" style="border-left:4px solid #3C3489">
+          <div class="metric-label" style="color:#3C3489">Unidade III · Aulas 21–30</div>
+          <div style="font-size:13px;font-weight:600;color:#1a1a2e;margin:4px 0">IA, Ética e Sociedade</div>
+          <div class="metric-sub">Privacidade, LGPD, viés, deepfakes, vigilância, saúde mental</div>
+        </div>
+        <div class="metric-card" style="border-left:4px solid #854F0B">
+          <div class="metric-label" style="color:#854F0B">Unidade IV · Aulas 31–40</div>
+          <div style="font-size:13px;font-weight:600;color:#1a1a2e;margin:4px 0">IA, Trabalho e Projeto Final</div>
+          <div class="metric-sub">Futuro do trabalho, cidadania digital, projeto em grupo</div>
         </div>
       </div>
 
@@ -105,22 +129,22 @@
         <div class="leg-item"><div class="leg-dot" style="background:#185FA5"></div> Teoria/Conceito</div>
         <div class="leg-item"><div class="leg-dot" style="background:#1E8449"></div> Prática/Lab</div>
         <div class="leg-item"><div class="leg-dot" style="background:#3C3489"></div> Projeto</div>
-        <div class="leg-item"><div class="leg-dot" style="background:#854F0B"></div> Avaliação (AQL/AQT/RPT)</div>
+        <div class="leg-item"><div class="leg-dot" style="background:#854F0B"></div> Avaliação (Quiz/Seminário/Projeto)</div>
       </div>
 
       <!-- TABS DE TRIMESTRE -->
       <div class="tri-tabs">
         <button class="tri-tab active" onclick="showTri(1, this)">
           <i class="ti ti-calendar" style="vertical-align:-2px;margin-right:4px"></i>
-          1º Trimestre — Sem. 1–13
+          1º Trimestre — Aulas 1–13
         </button>
         <button class="tri-tab" onclick="showTri(2, this)">
           <i class="ti ti-calendar" style="vertical-align:-2px;margin-right:4px"></i>
-          2º Trimestre — Sem. 14–27
+          2º Trimestre — Aulas 14–27
         </button>
         <button class="tri-tab" onclick="showTri(3, this)">
           <i class="ti ti-calendar" style="vertical-align:-2px;margin-right:4px"></i>
-          3º Trimestre — Sem. 28–40
+          3º Trimestre — Aulas 28–40
         </button>
       </div>
 
@@ -133,8 +157,8 @@
       <div class="detail-card" id="detail-panel" style="margin-top:1.25rem">
         <div class="detail-head">
           <div>
-            <div class="detail-title" id="det-titulo">Semana 1 — Arquitetura web, cliente x servidor, HTTP/HTTPS</div>
-            <div class="detail-sub">Programação para Web · 3º Ano · Informática para Internet · SEDUC-PI · PPC 2024</div>
+            <div class="detail-title" id="det-titulo">Aula 1 — Apresentação da Disciplina e Sondagem Inicial</div>
+            <div class="detail-sub">Inteligência Artificial · 1º Ano · Ensino Médio · SEDUC-PI · Alinhado à BNCC</div>
           </div>
           <div class="btn-row">
             <button class="btn btn-primary" onclick="pedirPlano()">
@@ -150,24 +174,21 @@
         </div>
 
         <div class="detail-grid">
-          <div class="detail-item"><strong>Tema</strong><span id="det-tema">Arquitetura web, protocolo HTTP/HTTPS, cliente x servidor</span></div>
+          <div class="detail-item"><strong>Tema</strong><span id="det-tema">Apresentação da Disciplina e Sondagem Inicial</span></div>
           <div class="detail-item"><strong>Tipo</strong><span id="det-tipo">Teoria/Conceito</span></div>
-          <div class="detail-item"><strong>Competência (PPC 2024)</strong><span id="det-comp">Compreender os fundamentos da arquitetura web e suas tecnologias</span></div>
-          <div class="detail-item"><strong>Habilidade (PPC 2024)</strong><span id="det-hab">Identificar como funciona HTTP e a comunicação cliente-servidor</span></div>
-          <div class="detail-item"><strong>Avaliação sugerida</strong><span id="det-aval">Participação em debate + mapa conceitual (AQL)</span></div>
-          <div class="detail-item"><strong>Recursos</strong><span id="det-rec">Projetor, lousa, exercício de fixação</span></div>
+          <div class="detail-item"><strong>Competência (BNCC)</strong><span id="det-comp">Conhecer a disciplina e levantar conhecimentos prévios sobre IA</span></div>
+          <div class="detail-item"><strong>Habilidade</strong><span id="det-hab">Mapear concepções iniciais e criar ambiente de aprendizagem colaborativo</span></div>
+          <div class="detail-item"><strong>Avaliação sugerida</strong><span id="det-aval">Observação da participação e questionário diagnóstico (sem nota — mapeamento)</span></div>
+          <div class="detail-item"><strong>Recursos</strong><span id="det-rec">Quadro e marcadores coloridos, questionário impresso ou Google Forms, imagens de IA</span></div>
         </div>
 
         <div class="quadro" id="det-quadro">
-          <p>PROGRAMAÇÃO PARA WEB — SEM. 1</p>
+          <p>IA — AULA 01: APRESENTAÇÃO</p>
           <p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
-          <p>ARQUITETURA WEB</p>
-          <p>  Cliente → Request → Servidor</p>
-          <p>  Servidor → Response → Cliente</p>
-          <p> </p>
-          <p>HTTP vs HTTPS</p>
-          <p>  HTTP: sem criptografia</p>
-          <p>  HTTPS: com SSL/TLS (cadeado)</p>
+          <p>Dinâmica: nome + tecnologia que usa</p>
+          <p>Sondagem: O que você sabe sobre IA?</p>
+          <p>Mapa mental coletivo no quadro</p>
+          <p>Diário de Bordo: o que espero aprender</p>
         </div>
       </div>
 
@@ -188,7 +209,7 @@
   </main>
 </div>
 
-<script src="dados/aulas.js"></script>
+<script src="dados/aulas-ia.js"></script>
 <script src="app.js"></script>
 <script>
   let aulaSelecionada = AULAS[0];
@@ -200,7 +221,7 @@
       const container = document.getElementById('tri' + tri);
       container.innerHTML = `
         <div class="seq-head">
-          <span>Semana</span>
+          <span>Aula</span>
           <span>Tema da aula</span>
           <span>Tipo</span>
           <span>Competência</span>
@@ -208,7 +229,7 @@
         ${aulasTri.map(a => `
           <div class="seq-row ${aulaSelecionada.sem === a.sem ? 'sel' : ''}"
                onclick="selecionarAula(${a.sem})">
-            <div class="seq-sem">Sem. ${a.sem}</div>
+            <div class="seq-sem">Aula ${a.sem}</div>
             <div class="seq-tema">${a.tema}</div>
             <div><span class="tipo-badge tipo-${a.tipo}">${tipoLabel(a.tipo)}</span></div>
             <div class="seq-comp">${a.comp}</div>
@@ -224,7 +245,7 @@
     renderTabelas();
 
     document.getElementById('det-titulo').textContent =
-      `Semana ${aulaSelecionada.sem} — ${aulaSelecionada.tema}`;
+      `Aula ${aulaSelecionada.sem} — ${aulaSelecionada.tema}`;
     document.getElementById('det-tema').textContent = aulaSelecionada.tema;
     document.getElementById('det-tipo').textContent = tipoLabel(aulaSelecionada.tipo);
     document.getElementById('det-comp').textContent = aulaSelecionada.comp;
@@ -251,14 +272,13 @@
     const a = aulaSelecionada;
     if (a.guia && a.guia.length > 0) {
       renderGuia(a.guia, a.tempos,
-        `Sem. ${a.sem}: ${a.tema.split('—')[0].trim()}`,
+        `Aula ${a.sem}: ${a.tema.split('—')[0].trim()}`,
         `Roteiro passo a passo · 60 min · ${tipoLabel(a.tipo)} · SEDUC-PI`,
         'guia-panel'
       );
     } else {
-      // Sem guia embutido — mostra prompt para gerar
       document.getElementById('guia-title').textContent =
-        'Como ministrar — Semana ' + a.sem;
+        'Como ministrar — Aula ' + a.sem;
       document.getElementById('guia-sub').textContent =
         'Roteiro passo a passo · 60 min · ' + tipoLabel(a.tipo) + ' · SEDUC-PI';
       document.getElementById('guia-etapas').innerHTML = `
@@ -287,7 +307,7 @@
 
   function copiarPromptGuia() {
     const a = aulaSelecionada;
-    const texto = `Gere um roteiro detalhado passo a passo de como ministrar a aula "${a.tema}" para alunos do 3º Ano de Informática para Internet (SEDUC-PI, PPC 2024). Tipo de aula: ${tipoLabel(a.tipo)}. Competência: ${a.comp}. Inclua: divisão de tempo por etapa (total 60 min), falas sugeridas para o professor em cada momento, perguntas de verificação da aprendizagem, dicas de gestão da turma no laboratório, como circular e atender dúvidas, e como registrar a participação dos alunos para compor a nota AQL conforme IN SUPEN Nº 4/2024.`;
+    const texto = `Gere um roteiro detalhado passo a passo de como ministrar a aula "${a.tema}" para alunos do 1º Ano do Ensino Médio (SEDUC-PI, alinhado à BNCC). Tipo de aula: ${tipoLabel(a.tipo)}. Competência: ${a.comp}. Inclua: divisão de tempo por etapa (total 60 min), falas sugeridas para o professor em cada momento, perguntas de verificação da aprendizagem, dicas de gestão da turma, como conduzir as atividades e como registrar a participação dos alunos para compor a nota AQL conforme IN SUPEN Nº 4/2024.`;
     const box = document.getElementById('prompt-guia-box');
     const textEl = document.getElementById('prompt-guia-text');
     textEl.value = texto;
@@ -299,14 +319,14 @@
   // ── Botão plano SEDUC ─────────────────────────────────────
   function pedirPlano() {
     const a = aulaSelecionada;
-    const texto = `Gere um plano de aula completo no formato SEDUC-PI para a disciplina Programação para Web, 3º Ano de Informática para Internet. Tema: ${a.tema}. Competência do PPC 2024: ${a.comp}. Habilidade: ${a.hab}. Inclua: dados de identificação (escola, turma, data, professor, disciplina), ementa, objetivos, conteúdo, metodologia, recursos, avaliação AQL e AQT conforme IN SUPEN Nº 4/2024 da SEDUC-PI.`;
+    const texto = `Gere um plano de aula completo no formato SEDUC-PI para a disciplina Inteligência Artificial, 1º Ano do Ensino Médio, alinhado à BNCC. Tema: ${a.tema}. Competência: ${a.comp}. Habilidade: ${a.hab}. Inclua: dados de identificação (escola, turma, data, professor, disciplina), ementa, objetivos, conteúdo, metodologia, recursos, avaliação AQL e AQT conforme IN SUPEN Nº 4/2024 da SEDUC-PI.`;
     mostrarModal('Plano de aula SEDUC-PI', texto, '#185FA5');
   }
 
   // ── Botão atividade ───────────────────────────────────────
   function pedirAtividade() {
     const a = aulaSelecionada;
-    const texto = `Crie uma atividade avaliativa para a aula "${a.tema}" para alunos do 3º Ano de Informática para Internet (SEDUC-PI). Inclua: 3 questões de múltipla escolha (50%) e 2 questões discursivas (50%), conforme formato AQT da IN SUPEN Nº 4/2024. Ao final, inclua o gabarito e rubrica de correção.`;
+    const texto = `Crie uma atividade avaliativa para a aula "${a.tema}" para alunos do 1º Ano do Ensino Médio — disciplina Inteligência Artificial (SEDUC-PI, alinhado à BNCC). Inclua: 3 questões de múltipla escolha (50%) e 2 questões discursivas (50%), conforme formato AQT da IN SUPEN Nº 4/2024. Ao final, inclua o gabarito e rubrica de correção.`;
     mostrarModal('Atividade — ' + a.tema.split('—')[0], texto, '#3C3489');
   }
 
