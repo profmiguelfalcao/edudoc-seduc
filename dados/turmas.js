@@ -50,8 +50,8 @@ const TURMAS = [
   {
     id: 'redes',
     materia: 'Redes de Computadores',
-    ano: 'Curso Técnico',
-    curso: 'Técnico em Redes',
+    ano: '3ª Série',
+    curso: 'Informática para Internet',
     badge: 'Redes',
     cor: 'teal',
     icone: 'ti-network',
