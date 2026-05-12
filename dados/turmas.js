@@ -48,6 +48,29 @@ const TURMAS = [
     guia: 'Gere roteiro passo a passo (60 min) de como ministrar aula de Design e Acessibilidade Web para 3º Ano (SEDUC-PI). Inclua divisão de tempo, falas sugeridas, atividades práticas e registro AQL.'
   },
   {
+    id: 'poo',
+    materia: 'Programação Orientada a Objetos',
+    ano: '2º Ano',
+    curso: 'Informática para Internet',
+    badge: 'POO',
+    cor: 'green',
+    icone: 'ti-layers',
+    quadro: [
+      'PROG. ORIENTADA A OBJETOS — 2º ANO',
+      '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━',
+      '4 PILARES:',
+      '  Encapsulamento | Herança',
+      '  Polimorfismo   | Abstração',
+      '2. CLASSE vs OBJETO',
+      '   class Aluno { } → new Aluno()',
+      '3. HERANÇA',
+      '   class Aluno extends Pessoa { }'
+    ],
+    atividade: 'Modelar sistema de cadastro com classes, encapsulamento e herança em Java',
+    plano: 'Gere um plano de aula completo no formato SEDUC-PI para Programação Orientada a Objetos, 2º Ano de Informática para Internet. Tema: classes, objetos e encapsulamento em Java. Competência do PPC: aplicar os pilares da POO no desenvolvimento de sistemas. Inclua: identificação, ementa, objetivos, metodologia, recursos, avaliação AQL e AQT conforme IN SUPEN 4/2024.',
+    guia: 'Gere um roteiro detalhado passo a passo (60 min) de como ministrar a aula de Programação Orientada a Objetos — classes e encapsulamento Java para o 2º Ano de Informática para Internet (SEDUC-PI). Inclua: divisão de tempo, falas sugeridas, como conduzir no laboratório, dicas de gestão e como registrar participação para AQL.'
+  },
+  {
     id: 'redes',
     materia: 'Redes de Computadores',
     ano: '3ª Série',
